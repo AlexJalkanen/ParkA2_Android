@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.parka2.parka2">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
     <application
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
@@ -21,5 +25,9 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAkZ_ZWLhkYsdaREh_jIKlgziXO_9kqGBs"/>
     </application>
+
+    <uses-feature
+            android:glEsVersion="0x00020000"
+            android:required="true"/>
 
 </manifest>
