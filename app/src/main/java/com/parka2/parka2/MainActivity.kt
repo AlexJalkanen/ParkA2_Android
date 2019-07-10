@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         bottomNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-        replaceFragment(OptionsFragment())
+        replaceFragment(MapFragment())
     }
 
     private fun replaceFragment(fragment: Fragment) {

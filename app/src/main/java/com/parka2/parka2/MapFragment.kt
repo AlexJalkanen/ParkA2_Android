@@ -12,6 +12,7 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 
+
 class MapFragment : Fragment(), OnMapReadyCallback {
     private lateinit var mMap: GoogleMap
 
@@ -27,15 +28,44 @@ class MapFragment : Fragment(), OnMapReadyCallback {
         mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment?.getMapAsync(this)
 
+
         return rootView
     }
 
     override fun onMapReady(googleMap: GoogleMap?) {
         mMap = googleMap!!
+
+
+
         // Add a marker in Sydney and move the camera
-        val sydney = LatLng(-34.0, 151.0)
-        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+        val startLocation = LatLng(42.281285, -83.743932)
+        val zoom = 14.5f
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(startLocation))
+        mMap.moveCamera(CameraUpdateFactory.zoomTo(zoom))
+
+        val fourthandwashington = LatLng(42.2805163, -83.7481832)
+        mMap.addMarker(MarkerOptions().position(fourthandwashington).title("Fourth and Washington"))
+
+        val firstandwashington = LatLng(42.2804774, -83.7500788)
+        mMap.addMarker(MarkerOptions().position(firstandwashington).title("First and Washington"))
+
+        val maynard = LatLng(42.2789278, -83.7421086)
+        mMap.addMarker(MarkerOptions().position(maynard).title("Maynard Structure"))
+
+        val forest = LatLng(42.2743915, -83.733201)
+        mMap.addMarker(MarkerOptions().position(forest).title("Forest Structure"))
+
+        val fourthandwilliam = LatLng(42.2784615, -83.7477646)
+        mMap.addMarker(MarkerOptions().position(fourthandwilliam).title("Fourth and William"))
+
+        val libertysquare = LatLng(42.280283, -83.7428007)
+        mMap.addMarker(MarkerOptions().position(libertysquare).title("Liberty Square Structure"))
+
+        val annashley = LatLng(42.2826333, -83.7496376)
+        mMap.addMarker(MarkerOptions().position(annashley).title("Ann Ashley Structure"))
+
+        val librarylane = LatLng(42.2787552,-83.7455673)
+        mMap.addMarker(MarkerOptions().position(librarylane).title("Library Lane Structure"))
     }
 
 }
