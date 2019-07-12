@@ -11,13 +11,19 @@ class MainActivity : AppCompatActivity() {
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener {
         item->
         when(item.itemId) {
-            R.id.map -> {
-                println("map pressed")
+            R.id.structures -> {
                 replaceFragment(MapFragment())
                 return@OnNavigationItemSelectedListener true
             }
+            R.id.lots -> {
+                replaceFragment(LotsFragment())
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.ride-> {
+                replaceFragment(TheRideFragment())
+                return@OnNavigationItemSelectedListener true
+            }
             R.id.options -> {
-                println("options pressed")
                 replaceFragment(OptionsFragment())
                 return@OnNavigationItemSelectedListener true
             }

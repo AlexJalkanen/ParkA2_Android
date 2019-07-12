@@ -12,7 +12,6 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 
-
 class MapFragment : Fragment(), OnMapReadyCallback {
     private lateinit var mMap: GoogleMap
 
@@ -28,16 +27,12 @@ class MapFragment : Fragment(), OnMapReadyCallback {
         mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment?.getMapAsync(this)
 
-
         return rootView
     }
 
     override fun onMapReady(googleMap: GoogleMap?) {
         mMap = googleMap!!
 
-
-
-        // Add a marker in Sydney and move the camera
         val startLocation = LatLng(42.281285, -83.743932)
         val zoom = 14.5f
         mMap.moveCamera(CameraUpdateFactory.newLatLng(startLocation))
@@ -67,5 +62,4 @@ class MapFragment : Fragment(), OnMapReadyCallback {
         val librarylane = LatLng(42.2787552,-83.7455673)
         mMap.addMarker(MarkerOptions().position(librarylane).title("Library Lane Structure"))
     }
-
 }

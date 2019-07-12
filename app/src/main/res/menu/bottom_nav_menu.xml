@@ -2,13 +2,23 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/map"
-        android:title="Map"
-        android:icon="@drawable/map"
+        android:id="@+id/structures"
+        android:title="Structures"
+        android:icon="@drawable/car"
         />
+    <item
+        android:id="@+id/lots"
+        android:title="Lots"
+        android:icon="@drawable/parking"
+    />
+    <item
+        android:id="@+id/ride"
+        android:title="The Ride"
+        android:icon="@drawable/bus"
+    />
     <item
         android:id="@+id/options"
         android:title="Options"
-        android:icon="@drawable/parking"
+        android:icon="@drawable/options"
         />
 </menu>
