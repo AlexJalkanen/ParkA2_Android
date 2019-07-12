@@ -12,6 +12,9 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.gms.maps.model.BitmapDescriptor
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
+
 
 class LotsFragment : Fragment(), OnMapReadyCallback {
     private lateinit var mMap: GoogleMap
@@ -41,32 +44,44 @@ class LotsFragment : Fragment(), OnMapReadyCallback {
 
 
         val southashley = LatLng(42.2793726, -83.7498497)
-        mMap.addMarker(MarkerOptions().position(southashley).title("South Ashley Lot"))
+        mMap.addMarker(MarkerOptions().position(southashley).title("South Ashley Lot").icon(setColor(-1)))
 
         val firstandwilliam = LatLng(42.279587, -83.751292)
-        mMap.addMarker(MarkerOptions().position(firstandwilliam).title("First and William Lot"))
+        mMap.addMarker(MarkerOptions().position(firstandwilliam).title("First and William Lot").icon(setColor(-1)))
 
         val palio = LatLng(42.278120, -83.748300)
-        mMap.addMarker(MarkerOptions().position(palio).title("Palio Lot"))
+        mMap.addMarker(MarkerOptions().position(palio).title("Palio Lot").icon(setColor(-1)))
 
         val washington = LatLng(42.280266, -83.752322)
-        mMap.addMarker(MarkerOptions().position(washington).title("415 W. Washington Lot"))
+        mMap.addMarker(MarkerOptions().position(washington).title("415 W. Washington Lot").icon(setColor(-1)))
 
         val annandmain = LatLng(42.282183, -83.748727)
-        mMap.addMarker(MarkerOptions().position(annandmain).title("Ann and Main Lot"))
+        mMap.addMarker(MarkerOptions().position(annandmain).title("Ann and Main Lot").icon(setColor(-1)))
 
         val fourthandcatherine = LatLng(42.283579, -83.747332)
-        mMap.addMarker(MarkerOptions().position(fourthandcatherine).title("Fourth and Catherine Lot"))
+        mMap.addMarker(MarkerOptions().position(fourthandcatherine).title("Fourth and Catherine Lot").icon(setColor(-1)))
 
         val farmer = LatLng(42.2839314,-83.7466843)
-        mMap.addMarker(MarkerOptions().position(farmer).title("Farmer's Market Lot"))
+        mMap.addMarker(MarkerOptions().position(farmer).title("Farmer's Market Lot").icon(setColor(-1)))
 
         val community = LatLng(42.283727, -83.745398)
-        mMap.addMarker(MarkerOptions().position(community).title("Community High Lot"))
+        mMap.addMarker(MarkerOptions().position(community).title("Community High Lot").icon(setColor(-1)))
 
         val kerrytown = LatLng(42.284477, -83.746819)
-        mMap.addMarker(MarkerOptions().position(kerrytown).title("Kerrytown Lot"))
+        mMap.addMarker(MarkerOptions().position(kerrytown).title("Kerrytown Lot").icon(setColor(-1)))
 
+    }
+
+    private fun setColor(capacity: Int): BitmapDescriptor {
+        if (capacity < 0) {
+            return BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN)
+        }
+        if (capacity < 50) {
+            return BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)
+        }
+        return if (capacity < 400) {
+            return BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)
+        } else BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)
     }
 
 
